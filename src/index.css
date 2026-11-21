@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme {
+  --color-botanical: #263829;
+  --color-botanical-dark: #1A271C;
+  --color-champagne: #B9986E;
+  --color-champagne-light: #D6BE9C;
+  --color-espresso: #241B17;
+  --color-espresso-soft: #332822;
+  --color-ivory: #F6F3EE;
+  --color-warm-white: #FCFBF9;
+  --color-graphite: #262320;
+  --color-ink-muted: #5C554E;
+
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Montserrat", sans-serif;
+}
+
+/* Estilos Base & Tipografia */
+body {
+  background-color: #FCFBF9;
+  color: #262320;
+  font-family: "Montserrat", sans-serif;
+  font-variant-numeric: lining-nums tabular-nums;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-editorial {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-variant-numeric: lining-nums;
+}
+
+/* Marca tipográfica 4EVER com números alinhados (nunca cai o 4) */
+.brand-4ever {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-variant-numeric: lining-nums;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  display: inline-block;
+}
+
+/* Formato de Arco / Altar Clássico para Casamentos */
+.arch-frame {
+  border-radius: 9999px 9999px 2rem 2rem;
+}
+
+/* Animação suave de flutuação ("respiro") */
+@keyframes gentleFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+.animate-float {
+  animation: gentleFloat 6s ease-in-out infinite;
+}
+
+/* Reveal suave ao rolar a página */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Integração natural das imagens oficiais da logomarca */
+.logo-header-img {
+  mix-blend-mode: multiply;
+}
+
+.logo-footer-img {
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.25));
+}
+
+/* Respeito à preferência de redução de movimento */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float {
+    animation: none;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
