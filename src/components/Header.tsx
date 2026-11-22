@@ -32,13 +32,13 @@ export function Header() {
           {/* Menu Desktop */}
           <nav
             aria-label="Menu principal"
-            className="hidden md:flex items-center space-x-7 lg:space-x-9 text-xs uppercase tracking-[0.2em] font-medium text-graphite"
+            className="hidden lg:flex items-center space-x-6 xl:space-x-8 text-[11px] xl:text-xs uppercase tracking-[0.18em] font-medium text-graphite"
           >
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="hover:text-botanical transition-colors py-1"
+                className="hover:text-botanical transition-colors py-1 whitespace-nowrap"
               >
                 {link.label}
               </a>
@@ -46,18 +46,18 @@ export function Header() {
           </nav>
 
           {/* Botão CTA Desktop */}
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <a
               href={HEADER_CTA_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-6 py-3 rounded-full bg-botanical text-warm-white text-xs uppercase tracking-[0.18em] font-medium hover:bg-botanical-dark transition-all duration-300 shadow-sm hover:shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-champagne"
+              className="inline-flex items-center px-5 xl:px-6 py-3 rounded-full bg-botanical text-warm-white text-[11px] xl:text-xs uppercase tracking-[0.18em] font-medium hover:bg-botanical-dark transition-all duration-300 shadow-sm hover:shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-champagne whitespace-nowrap"
             >
               Solicitar orçamento
             </a>
           </div>
 
-          {/* Botão Menu Mobile */}
+          {/* Botão Menu Mobile / Tablet */}
           <button
             id="mobile-menu-btn"
             type="button"
@@ -65,7 +65,7 @@ export function Header() {
             aria-controls="mobile-menu"
             aria-label="Abrir menu de navegação"
             onClick={() => setMobileMenuOpen((prev) => !prev)}
-            className="md:hidden p-2.5 rounded-full text-graphite hover:bg-ivory transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-botanical cursor-pointer"
+            className="lg:hidden p-2.5 rounded-full text-graphite hover:bg-ivory transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-botanical cursor-pointer"
           >
             <svg
               className="w-6 h-6"
@@ -85,11 +85,11 @@ export function Header() {
         </div>
       </div>
 
-      {/* Menu Mobile Dropdown */}
+      {/* Menu Mobile / Tablet Dropdown */}
       {mobileMenuOpen && (
         <div
           id="mobile-menu"
-          className="md:hidden bg-warm-white border-t border-champagne/25 px-6 py-6 space-y-4 shadow-xl"
+          className="lg:hidden bg-warm-white border-t border-champagne/25 px-6 py-6 space-y-4 shadow-xl"
         >
           <nav
             aria-label="Menu mobile"

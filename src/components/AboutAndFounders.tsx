@@ -1,29 +1,24 @@
 import { DIFFERENTIALS, FOUNDERS, SITE_ASSETS } from '../data/siteData';
+import { SectionConnector } from './SectionConnector';
 
 export function AboutAndFounders() {
   return (
     <section
       id="sobre"
-      className="py-20 md:py-28 bg-gradient-to-b from-warm-white via-ivory to-warm-white"
+      className="pt-10 pb-20 md:pt-12 md:pb-24 bg-gradient-to-b from-warm-white via-ivory to-warm-white scroll-mt-20"
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         {/* Bloco História & Propósito */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-24 reveal">
-          {/* Imagem em Formato de Arco / Altar com Flutuação Suave */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center reveal">
+          {/* Foto Oficial da Equipe na Ponte em Formato de Arco */}
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative w-full max-w-md animate-float">
-              <div className="arch-frame overflow-hidden shadow-2xl border-4 border-warm-white aspect-[4/5]">
+              <div className="arch-frame overflow-hidden shadow-2xl border-4 border-warm-white aspect-[4/5] bg-ivory">
                 <img
                   src={SITE_ASSETS.aboutArchImage}
-                  alt="Cerimônia de casamento elegante ao ar livre"
-                  className="w-full h-full object-cover"
+                  alt="Os quatro sócios fundadores da 4EVER Cerimonial na ponte"
+                  className="w-full h-full object-cover object-[50%_22%] contrast-[1.03] saturate-[0.94]"
                 />
-              </div>
-              {/* Selo Delicado */}
-              <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 bg-warm-white/95 backdrop-blur-md px-6 py-3 rounded-full shadow-md border border-champagne/40 whitespace-nowrap">
-                <span className="text-[11px] uppercase tracking-[0.22em] text-espresso font-semibold">
-                  Sofisticação &bull; Acolhimento &bull; Precisão
-                </span>
               </div>
             </div>
           </div>
@@ -41,15 +36,15 @@ export function AboutAndFounders() {
               <strong className="font-semibold text-espresso">
                 <span className="brand-4ever">4EVER</span> Cerimonial
               </strong>{' '}
-              nasceu da união de quatro profissionais apaixonados pela arte de celebrar. Atuando em
-              Macaé e região, dedicamos nossa experiência especialmente à realização de{' '}
-              <strong>casamentos</strong>, conduzindo cada etapa com transparência, escuta ativa e
-              organização impecável.
+              nasceu da união de quatro profissionais apaixonados pela arte de unir casais. Atuando
+              em Macaé e região, dedicamos nossa experiência especialmente à realização de{' '}
+              <strong>casamentos</strong>, conduzindo cada etapa com profissionalismo,
+              transparência, escuta ativa e organização impecável.
             </p>
             <p className="text-graphite/85 leading-relaxed font-light text-base">
-              Acreditamos que o luxo verdadeiro está na tranquilidade dos noivos e das famílias. Por
-              isso, estruturamos um atendimento próximo e humano — do alinhamento inicial de
-              fornecedores à coordenação minuciosa de cada protocolo no grande dia.
+              Acreditamos que esse evento merece ser vivido com tranquilidade, permitindo aos noivos
+              e familiares desfrutarem ao máximo da cerimônia. Por isso, estruturamos um atendimento
+              personalizado a cada cliente.
             </p>
 
             {/* Diferenciais */}
@@ -72,8 +67,11 @@ export function AboutAndFounders() {
           </div>
         </div>
 
+        {/* Conector vertical delicado unindo Nossa Essência aos Fundadores */}
+        <SectionConnector bgClassName="bg-transparent" className="my-12 reveal" />
+
         {/* Os Quatro Fundadores */}
-        <div className="pt-8 border-t border-champagne/25 reveal">
+        <div id="fundadores" className="scroll-mt-28 reveal">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-xs uppercase tracking-[0.28em] text-champagne font-semibold">
               Quem Faz Acontecer
@@ -82,8 +80,7 @@ export function AboutAndFounders() {
               Os Quatro Fundadores
             </h2>
             <p className="text-sm text-graphite/80 font-light leading-relaxed">
-              Nossa equipe é formada integralmente pelos quatro sócios fundadores. Você sabe
-              exatamente quem estará ao seu lado em cada reunião e no dia da sua celebração.
+              Nossa equipe é formada integralmente pelos quatro sócios fundadores.
             </p>
           </div>
 
@@ -93,17 +90,14 @@ export function AboutAndFounders() {
                 key={founder.name}
                 className="bg-warm-white rounded-[2rem] p-6 text-center shadow-sm hover:shadow-md transition-all duration-300 border border-champagne/25 flex flex-col items-center"
               >
-                <div className="w-36 h-44 arch-frame overflow-hidden mb-5 border-2 border-champagne/40 bg-ivory relative group">
+                <div className="w-36 h-44 arch-frame overflow-hidden mb-5 border-2 border-champagne/40 bg-ivory relative group shadow-xs">
                   <img
                     src={founder.image}
                     alt={founder.alt}
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    className={`w-full h-full object-cover ${
+                      founder.objectPositionClass ?? 'object-top'
+                    } group-hover:scale-105 transition-transform duration-500`}
                   />
-                  {founder.isProvisional && (
-                    <span className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-espresso/85 text-warm-white text-[9px] uppercase tracking-widest px-2.5 py-0.5 rounded-full whitespace-nowrap">
-                      Foto Provisória
-                    </span>
-                  )}
                 </div>
                 <h3 className="font-serif text-2xl text-espresso font-semibold">{founder.name}</h3>
                 <p className="text-[11px] uppercase tracking-[0.2em] text-botanical font-semibold mt-1 mb-3">

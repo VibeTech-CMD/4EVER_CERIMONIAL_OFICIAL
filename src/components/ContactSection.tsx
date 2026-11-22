@@ -8,11 +8,16 @@ const CONTACT_MAIN_WA = buildWhatsAppUrl(
   'Olá, equipe 4EVER Cerimonial! Gostaria de conversar sobre o meu evento e solicitar um orçamento.'
 );
 
+const MAPS_URL = 'https://www.google.com/maps/search/?api=1&query=Maca%C3%A9+RJ';
+
 export function ContactSection() {
   return (
-    <section id="contato" className="py-20 md:py-28 bg-gradient-to-b from-warm-white to-ivory">
-      <div className="max-w-5xl mx-auto px-5 sm:px-8">
-        <div className="bg-warm-white rounded-[2.5rem] p-8 sm:p-12 md:p-14 shadow-md border border-champagne/35 reveal">
+    <section
+      id="contato"
+      className="pt-10 pb-20 md:pt-12 md:pb-24 bg-gradient-to-b from-warm-white to-ivory scroll-mt-20"
+    >
+      <div className="max-w-6xl mx-auto px-5 sm:px-8">
+        <div className="bg-warm-white rounded-[2.5rem] p-7 sm:p-10 md:p-14 shadow-md border border-champagne/35 reveal">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="text-xs uppercase tracking-[0.28em] text-champagne font-semibold">
               Atendimento Personalizado
@@ -26,10 +31,15 @@ export function ContactSection() {
             </p>
           </div>
 
-          {/* Canais Oficiais em Grade Limpa */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
-            <div className="p-5 rounded-3xl bg-ivory/70 border border-champagne/25 flex flex-col items-center text-center">
-              <span className="w-11 h-11 rounded-full bg-botanical/10 text-botanical flex items-center justify-center mb-3">
+          {/* Canais Oficiais em Grade Limpa — todos em linha única sem quebra */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+            <a
+              href={MAPS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-5 rounded-3xl bg-ivory/70 border border-champagne/25 hover:border-botanical transition-colors flex flex-col items-center text-center group"
+            >
+              <span className="w-11 h-11 rounded-full bg-botanical/10 text-botanical flex items-center justify-center mb-3 group-hover:bg-botanical group-hover:text-warm-white transition-colors">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     strokeLinecap="round"
@@ -48,14 +58,16 @@ export function ContactSection() {
               <p className="text-[10px] uppercase tracking-widest text-champagne font-semibold mb-1">
                 Local de Atuação
               </p>
-              <p className="text-sm font-medium text-espresso">{CONTACT_INFO.location}</p>
-            </div>
+              <p className="text-[13px] font-medium text-espresso group-hover:text-botanical transition-colors whitespace-nowrap">
+                {CONTACT_INFO.location}
+              </p>
+            </a>
 
             <a
               href={CONTACT_SHORT_WA}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-5 rounded-3xl bg-ivory/70 border border-champagne/25 hover:border-botanical transition-colors flex flex-col items-center text-center group"
+              className="px-4 py-5 rounded-3xl bg-ivory/70 border border-champagne/25 hover:border-botanical transition-colors flex flex-col items-center text-center group"
             >
               <span className="w-11 h-11 rounded-full bg-botanical/10 text-botanical flex items-center justify-center mb-3 group-hover:bg-botanical group-hover:text-warm-white transition-colors">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -70,14 +82,14 @@ export function ContactSection() {
               <p className="text-[10px] uppercase tracking-widest text-champagne font-semibold mb-1">
                 WhatsApp Oficial
               </p>
-              <p className="text-sm font-medium text-espresso group-hover:text-botanical transition-colors">
+              <p className="text-[13px] font-medium text-espresso group-hover:text-botanical transition-colors whitespace-nowrap">
                 {CONTACT_INFO.whatsappDisplay}
               </p>
             </a>
 
             <a
               href={`mailto:${CONTACT_INFO.email}`}
-              className="p-5 rounded-3xl bg-ivory/70 border border-champagne/25 hover:border-botanical transition-colors flex flex-col items-center text-center group"
+              className="px-3.5 py-5 rounded-3xl bg-ivory/70 border border-champagne/25 hover:border-botanical transition-colors flex flex-col items-center text-center group"
             >
               <span className="w-11 h-11 rounded-full bg-botanical/10 text-botanical flex items-center justify-center mb-3 group-hover:bg-botanical group-hover:text-warm-white transition-colors">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -92,7 +104,7 @@ export function ContactSection() {
               <p className="text-[10px] uppercase tracking-widest text-champagne font-semibold mb-1">
                 E-mail
               </p>
-              <p className="text-xs sm:text-sm font-medium text-espresso group-hover:text-botanical transition-colors break-all">
+              <p className="text-[12.5px] font-medium text-espresso group-hover:text-botanical transition-colors whitespace-nowrap">
                 {CONTACT_INFO.email}
               </p>
             </a>
@@ -101,7 +113,7 @@ export function ContactSection() {
               href={CONTACT_INFO.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-5 rounded-3xl bg-ivory/70 border border-champagne/25 hover:border-botanical transition-colors flex flex-col items-center text-center group"
+              className="px-4 py-5 rounded-3xl bg-ivory/70 border border-champagne/25 hover:border-botanical transition-colors flex flex-col items-center text-center group"
             >
               <span className="w-11 h-11 rounded-full bg-botanical/10 text-botanical flex items-center justify-center mb-3 group-hover:bg-botanical group-hover:text-warm-white transition-colors">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -113,7 +125,7 @@ export function ContactSection() {
               <p className="text-[10px] uppercase tracking-widest text-champagne font-semibold mb-1">
                 Instagram
               </p>
-              <p className="text-sm font-medium text-espresso group-hover:text-botanical transition-colors">
+              <p className="text-[13px] font-medium text-espresso group-hover:text-botanical transition-colors whitespace-nowrap">
                 {CONTACT_INFO.instagramHandle}
               </p>
             </a>

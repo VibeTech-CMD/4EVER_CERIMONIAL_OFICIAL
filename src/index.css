@@ -64,6 +64,84 @@ h4,
   animation: gentleFloat 6s ease-in-out infinite;
 }
 
+/* Flutuação orbital mais dinâmica e elegante da nuvem de depoimentos */
+@keyframes cloudDriftA {
+  0%,
+  100% {
+    transform: translate3d(0px, 0px, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate3d(12px, -13px, 0) rotate(0.45deg);
+  }
+  50% {
+    transform: translate3d(4px, -18px, 0) rotate(-0.3deg);
+  }
+  75% {
+    transform: translate3d(-10px, -7px, 0) rotate(-0.45deg);
+  }
+}
+
+@keyframes cloudDriftB {
+  0%,
+  100% {
+    transform: translate3d(0px, 0px, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate3d(-13px, 11px, 0) rotate(-0.45deg);
+  }
+  50% {
+    transform: translate3d(-5px, 17px, 0) rotate(0.35deg);
+  }
+  75% {
+    transform: translate3d(11px, 8px, 0) rotate(0.4deg);
+  }
+}
+
+@keyframes cloudDriftC {
+  0%,
+  100% {
+    transform: translate3d(0px, 0px, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate3d(10px, 12px, 0) rotate(0.4deg);
+  }
+  50% {
+    transform: translate3d(-9px, -11px, 0) rotate(-0.35deg);
+  }
+  75% {
+    transform: translate3d(-13px, 6px, 0) rotate(0.25deg);
+  }
+}
+
+@keyframes testimonialEnter {
+  0% {
+    opacity: 0;
+    transform: translate3d(24px, 12px, 0) scale(0.96);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.animate-cloud-a {
+  animation: cloudDriftA 6.4s ease-in-out infinite;
+}
+
+.animate-cloud-b {
+  animation: cloudDriftB 7.2s ease-in-out infinite;
+}
+
+.animate-cloud-c {
+  animation: cloudDriftC 6.8s ease-in-out infinite;
+}
+
+.animate-testimonial-enter {
+  animation: testimonialEnter 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
 /* Reveal suave ao rolar a página */
 .reveal {
   opacity: 0;
@@ -87,7 +165,11 @@ h4,
 
 /* Respeito à preferência de redução de movimento */
 @media (prefers-reduced-motion: reduce) {
-  .animate-float {
+  .animate-float,
+  .animate-cloud-a,
+  .animate-cloud-b,
+  .animate-cloud-c,
+  .animate-testimonial-enter {
     animation: none;
   }
   .reveal {

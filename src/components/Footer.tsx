@@ -48,6 +48,11 @@ export function Footer() {
                 </a>
               </li>
               <li>
+                <a href="#por-que-4ever" className="hover:text-champagne-light transition-colors">
+                  Por que a 4EVER?
+                </a>
+              </li>
+              <li>
                 <a href="#servicos" className="hover:text-champagne-light transition-colors">
                   Serviços e Pacotes
                 </a>
