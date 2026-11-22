@@ -5,12 +5,19 @@ export function buildWhatsAppUrl(message?: string): string {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
+export function assetUrl(path: string): string {
+  const base = import.meta.env.BASE_URL || './';
+  const normalizedBase = base.endsWith('/') ? base : `${base}/`;
+  return `${normalizedBase}${path.replace(/^\/+/, '')}`;
+}
+
 export const SITE_ASSETS = {
-  headerLogo: '/assets/aistudio/Logo-Verde_Escuro_com_bege_d0f0c663.png',
-  footerLogo: '/assets/aistudio/Code_Generated_Image_bab81833.png',
-  heroImage: '/assets/aistudio/PRIMEIRA_IMAGEM_DO_SITE_a9936d4c.jpg',
-  aboutArchImage:
-    '/assets/aistudio/equipe_na_ponte_-_editado__falta_aumentar_a_qualidade__32733899.jpeg',
+  headerLogo: assetUrl('assets/aistudio/Logo-Verde_Escuro_com_bege_d0f0c663.png'),
+  footerLogo: assetUrl('assets/aistudio/Code_Generated_Image_bab81833.png'),
+  heroImage: assetUrl('assets/aistudio/PRIMEIRA_IMAGEM_DO_SITE_a9936d4c.jpg'),
+  aboutArchImage: assetUrl(
+    'assets/aistudio/equipe_na_ponte_-_editado__falta_aumentar_a_qualidade__32733899.jpeg'
+  ),
 };
 
 export const CONTACT_INFO = {
@@ -65,7 +72,7 @@ export const FOUNDERS: Founder[] = [
     name: 'Maisa',
     role: 'Sócia Fundadora',
     bio: 'Com olhar analítico e amor por perícia, garante que nenhum detalhe técnico, contratual ou logístico passe despercebido.',
-    image: '/assets/aistudio/maisa_809645df.png',
+    image: assetUrl('assets/aistudio/maisa_809645df.png'),
     alt: 'Maisa - Sócia Fundadora da 4EVER Cerimonial',
     objectPositionClass: 'object-[50%_14%]',
   },
@@ -73,7 +80,7 @@ export const FOUNDERS: Founder[] = [
     name: 'Alex',
     role: 'Sócio Fundador',
     bio: 'Apaixonado por música, traz sensibilidade rítmica e sincronia perfeita para entradas, cerimônias e momentos emocionantes.',
-    image: '/assets/aistudio/alex_b219b8eb.png',
+    image: assetUrl('assets/aistudio/alex_b219b8eb.png'),
     alt: 'Alex - Sócio Fundador da 4EVER Cerimonial',
     objectPositionClass: 'object-[50%_22%]',
   },
@@ -81,7 +88,7 @@ export const FOUNDERS: Founder[] = [
     name: 'Mayara',
     role: 'Sócia Fundadora',
     bio: 'Criativa e sempre pronta para renovar ideias e estilos, contribui com soluções estéticas leves e acolhimento próximo às noivas.',
-    image: '/assets/aistudio/mayara_29cd450b.png',
+    image: assetUrl('assets/aistudio/mayara_29cd450b.png'),
     alt: 'Mayara - Sócia Fundadora da 4EVER Cerimonial',
     objectPositionClass: 'object-[50%_12%]',
   },
@@ -89,7 +96,7 @@ export const FOUNDERS: Founder[] = [
     name: 'Cleisson',
     role: 'Sócio Fundador',
     bio: 'Movido pelo prazer em servir e ajudar a todos, coordena o suporte aos convidados, familiares e fornecedores com serenidade.',
-    image: '/assets/aistudio/cleisson_19c28c16.png',
+    image: assetUrl('assets/aistudio/cleisson_19c28c16.png'),
     alt: 'Cleisson - Sócio Fundador da 4EVER Cerimonial',
     objectPositionClass: 'object-[50%_20%]',
   },
@@ -204,7 +211,7 @@ export const OTHER_SEGMENTS: EventSegment[] = [
     title: 'Festas de Debutantes',
     description:
       'Planejamento cuidadoso do cerimonial de 15 anos, protocolos de entrada, valsa, homenagens e coordenação completa da festa junto à família.',
-    image: '/assets/aistudio/15_Anos__Christine__667f0dc0.jpeg',
+    image: assetUrl('assets/aistudio/15_Anos__Christine__667f0dc0.jpeg'),
     alt: 'Debutante de 15 anos celebrando ao ar livre entre árvores',
     objectPositionClass: 'object-[50%_38%]',
     whatsappMessage:
@@ -227,7 +234,7 @@ export const OTHER_SEGMENTS: EventSegment[] = [
     title: 'Celebrações Especiais',
     description:
       'Bodas, renovação de votos, formaturas e jantares comemorativos conduzidos com a mesma delicadeza e atenção aos detalhes.',
-    image: '/assets/aistudio/Eventos_em_geral_5dafede1.jpeg',
+    image: assetUrl('assets/aistudio/Eventos_em_geral_5dafede1.jpeg'),
     alt: 'Ambiente acolhedor com luminárias artesanais e iluminação quente para celebrações especiais',
     objectPositionClass: 'object-[50%_58%]',
     whatsappMessage:
@@ -253,8 +260,8 @@ export interface PortfolioItem {
 export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
     id: 'recepcao-jardim-luz-natural',
-    thumb: '/assets/aistudio/Recep__o_1__Mayara__68ed4aea.jpeg',
-    full: '/assets/aistudio/Recep__o_1__Mayara__68ed4aea.jpeg',
+    thumb: assetUrl('assets/aistudio/Recep__o_1__Mayara__68ed4aea.jpeg'),
+    full: assetUrl('assets/aistudio/Recep__o_1__Mayara__68ed4aea.jpeg'),
     alt: 'Salão de recepção de casamento iluminado naturalmente com mesas postas e flores',
     title: 'Recepção & Luz Natural',
     caption: 'Salão claro com mesas postas em azul suave, taças de cristal e arranjos delicados',
@@ -267,8 +274,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   },
   {
     id: 'emocao-abraco-luzes',
-    thumb: '/assets/aistudio/Guilbert_e_Andressa_abra_ados_95e76089.jpg',
-    full: '/assets/aistudio/Guilbert_e_Andressa_abra_ados_95e76089.jpg',
+    thumb: assetUrl('assets/aistudio/Guilbert_e_Andressa_abra_ados_95e76089.jpg'),
+    full: assetUrl('assets/aistudio/Guilbert_e_Andressa_abra_ados_95e76089.jpg'),
     alt: 'Noivos abraçados sorrindo diante de cortina de luzinhas quentes',
     title: 'Abraço & Emoção',
     caption: 'A leveza e o sorriso cúmplice dos noivos sob a cortina de luzes quentes',
@@ -281,8 +288,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   },
   {
     id: 'altar-pergolado-jardim',
-    thumb: '/assets/aistudio/Cerimonia_1__Mayara__4b12a6f6.jpeg',
-    full: '/assets/aistudio/Cerimonia_1__Mayara__4b12a6f6.jpeg',
+    thumb: assetUrl('assets/aistudio/Cerimonia_1__Mayara__4b12a6f6.jpeg'),
+    full: assetUrl('assets/aistudio/Cerimonia_1__Mayara__4b12a6f6.jpeg'),
     alt: 'Cerimônia ao ar livre com pergolado em voal branco e corredor de flores',
     title: 'Altar ao Ar Livre',
     caption: 'Pergolado em tecido fluido branco, corredor de flores e iluminação aconchegante',
@@ -295,8 +302,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   },
   {
     id: 'detalhes-votos-aliancas',
-    thumb: '/assets/aistudio/Detalhes_1__Mayara__a8768772.jpeg',
-    full: '/assets/aistudio/Detalhes_1__Mayara__a8768772.jpeg',
+    thumb: assetUrl('assets/aistudio/Detalhes_1__Mayara__a8768772.jpeg'),
+    full: assetUrl('assets/aistudio/Detalhes_1__Mayara__a8768772.jpeg'),
     alt: 'Detalhes da noiva com caderno de votos, alianças, perfume e sandália sobre madeira rústica',
     title: 'Votos & Alianças',
     caption: 'Composição afetiva com caderno de votos, alianças, perfume e detalhes da noiva',
@@ -309,8 +316,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   },
   {
     id: 'noiva-veu-janela',
-    thumb: '/assets/aistudio/Noiva_de_costas__Joyce__25aba64b.jpeg',
-    full: '/assets/aistudio/Noiva_de_costas__Joyce__25aba64b.jpeg',
+    thumb: assetUrl('assets/aistudio/Noiva_de_costas__Joyce__25aba64b.jpeg'),
+    full: assetUrl('assets/aistudio/Noiva_de_costas__Joyce__25aba64b.jpeg'),
     alt: 'Noiva de costas com véu longo rendado voltada para a luz natural',
     title: 'Instantes Antes do Sim',
     caption: 'Silêncio, luz suave e o véu rendado que anuncia o começo de uma nova história',
@@ -323,8 +330,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   },
   {
     id: 'cerimonia-portal-jardim',
-    thumb: '/assets/aistudio/Cerimonia_2__Mayara__60ba9ea5.jpeg',
-    full: '/assets/aistudio/Cerimonia_2__Mayara__60ba9ea5.jpeg',
+    thumb: assetUrl('assets/aistudio/Cerimonia_2__Mayara__60ba9ea5.jpeg'),
+    full: assetUrl('assets/aistudio/Cerimonia_2__Mayara__60ba9ea5.jpeg'),
     alt: 'Entrada de cerimônia no jardim com portas de madeira, voal branco e cruz decorada',
     title: 'Portal da Cerimônia',
     caption: 'Portas rústicas envoltas em voal branco e folhagens recebendo o cortejo no jardim',
@@ -337,8 +344,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   },
   {
     id: 'mesa-posta-botanica',
-    thumb: '/assets/aistudio/Recep__o_2__Mayara__d5cbb9b3.jpeg',
-    full: '/assets/aistudio/Recep__o_2__Mayara__d5cbb9b3.jpeg',
+    thumb: assetUrl('assets/aistudio/Recep__o_2__Mayara__d5cbb9b3.jpeg'),
+    full: assetUrl('assets/aistudio/Recep__o_2__Mayara__d5cbb9b3.jpeg'),
     alt: 'Detalhes da mesa posta com toalha verde-botânico, numeração floral e lembrança em madeira',
     title: 'Mesa Posta Botânica',
     caption: 'Toalha verde-oliva, papelaria floral numerada e lembranças pensadas com carinho',
@@ -351,8 +358,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   },
   {
     id: 'bolo-flores-luzinhas',
-    thumb: '/assets/aistudio/Detalhes_5__Mayara__d9ca1055.jpeg',
-    full: '/assets/aistudio/Detalhes_5__Mayara__d9ca1055.jpeg',
+    thumb: assetUrl('assets/aistudio/Detalhes_5__Mayara__d9ca1055.jpeg'),
+    full: assetUrl('assets/aistudio/Detalhes_5__Mayara__d9ca1055.jpeg'),
     alt: 'Mesa do bolo branco de três andares decorado com rosas claras e doces finos',
     title: 'Mesa do Bolo & Doces',
     caption: 'Bolo clássico com rosas suaves, retrato do casal e doces finos sob luzes cintilantes',
@@ -365,8 +372,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   },
   {
     id: 'retrato-noiva-pb',
-    thumb: '/assets/aistudio/Andressa_Posando_-_Preto_e_Branco_e4826377.jpg',
-    full: '/assets/aistudio/Andressa_Posando_-_Preto_e_Branco_e4826377.jpg',
+    thumb: assetUrl('assets/aistudio/Andressa_Posando_-_Preto_e_Branco_e4826377.jpg'),
+    full: assetUrl('assets/aistudio/Andressa_Posando_-_Preto_e_Branco_e4826377.jpg'),
     alt: 'Retrato editorial em preto e branco da noiva sorrindo com vestido rendado e buquê',
     title: 'Retrato Atemporal',
     caption: 'Registro em preto e branco celebrando a leveza, o buquê e o sorriso sereno da noiva',
@@ -379,8 +386,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   },
   {
     id: 'bolo-orquideas-cristal',
-    thumb: '/assets/aistudio/Detalhes_2__Mayara__c985e966.jpeg',
-    full: '/assets/aistudio/Detalhes_2__Mayara__c985e966.jpeg',
+    thumb: assetUrl('assets/aistudio/Detalhes_2__Mayara__c985e966.jpeg'),
+    full: assetUrl('assets/aistudio/Detalhes_2__Mayara__c985e966.jpeg'),
     alt: 'Bolo de casamento de cinco andares com cascata de orquídeas azuis e brancas sob lustres de cristal',
     title: 'Orquídeas & Cristais',
     caption: 'Bolo de cinco andares com cascata de orquídeas sob lustres de cristal e folhagens',
@@ -393,8 +400,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   },
   {
     id: 'perspectiva-portal-altar',
-    thumb: '/assets/aistudio/Cerimonia_3__Mayara__29ff80bc.jpeg',
-    full: '/assets/aistudio/Cerimonia_3__Mayara__29ff80bc.jpeg',
+    thumb: assetUrl('assets/aistudio/Cerimonia_3__Mayara__29ff80bc.jpeg'),
+    full: assetUrl('assets/aistudio/Cerimonia_3__Mayara__29ff80bc.jpeg'),
     alt: 'Vista artística pelas portas rústicas em direção ao altar ao ar livre cercado por palmeiras',
     title: 'Caminho até o Altar',
     caption: 'Enquadramento poético pelas portas de madeira rumo ao pergolado entre palmeiras',

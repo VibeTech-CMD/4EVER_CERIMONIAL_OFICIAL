@@ -20,7 +20,13 @@ export default function App() {
   } | null>(null);
 
   useEffect(() => {
-    const revealElements = document.querySelectorAll('.reveal');
+    const revealElements = Array.from(document.querySelectorAll('.reveal'));
+
+    if (typeof window === 'undefined' || !('IntersectionObserver' in window)) {
+      revealElements.forEach((el) => el.classList.add('active'));
+      return;
+    }
+
     const revealObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -30,7 +36,7 @@ export default function App() {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.05, rootMargin: '0px 0px -24px 0px' }
     );
 
     revealElements.forEach((el) => revealObserver.observe(el));
