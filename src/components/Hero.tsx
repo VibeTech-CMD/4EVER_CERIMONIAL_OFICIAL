@@ -15,6 +15,8 @@ export function Hero() {
         <img
           src={SITE_ASSETS.heroImage}
           alt="Cadernos de votos de casamento e alianças sobre superfície de madeira"
+          fetchPriority="high"
+          decoding="async"
           className="w-full h-full object-cover object-center scale-[1.02] sepia-[0.14] contrast-[1.06] brightness-[0.88]"
         />
         {/* Véu editorial homogêneo em Café Expresso e Champagne para leitura cristalina */}
@@ -44,18 +46,18 @@ export function Hero() {
           casamento em uma jornada leve, segura e inesquecível.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4">
           <a
             href={HERO_CTA_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto px-8 py-4 rounded-full bg-botanical text-warm-white text-xs uppercase tracking-[0.2em] font-medium hover:bg-botanical-dark transition-all duration-300 shadow-lg border border-champagne/35"
+            className="w-full sm:w-auto px-6 sm:px-8 py-4 rounded-full bg-botanical text-warm-white text-[11px] sm:text-xs uppercase tracking-[0.14em] sm:tracking-[0.2em] font-medium hover:bg-botanical-dark transition-all duration-300 shadow-lg border border-champagne/35 whitespace-nowrap"
           >
             Vamos planejar seu casamento
           </a>
           <a
             href="#servicos"
-            className="w-full sm:w-auto px-8 py-4 rounded-full border border-warm-white/70 bg-warm-white/10 backdrop-blur-sm text-warm-white text-xs uppercase tracking-[0.2em] font-medium hover:bg-warm-white hover:text-espresso transition-all duration-300"
+            className="w-full sm:w-auto px-6 sm:px-8 py-4 rounded-full border border-warm-white/70 bg-warm-white/10 backdrop-blur-sm text-warm-white text-[11px] sm:text-xs uppercase tracking-[0.14em] sm:tracking-[0.2em] font-medium hover:bg-warm-white hover:text-espresso transition-all duration-300 whitespace-nowrap"
           >
             Conheça nosso trabalho
           </a>

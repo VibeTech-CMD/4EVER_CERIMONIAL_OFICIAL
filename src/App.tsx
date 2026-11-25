@@ -27,6 +27,18 @@ export default function App() {
       return;
     }
 
+    const revealAboveOrInView = () => {
+      const viewportBottom = window.scrollY + window.innerHeight + 80;
+      revealElements.forEach((el) => {
+        if (el.classList.contains('active')) return;
+        const rect = el.getBoundingClientRect();
+        const elTop = rect.top + window.scrollY;
+        if (elTop <= viewportBottom) {
+          el.classList.add('active');
+        }
+      });
+    };
+
     const revealObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -36,12 +48,23 @@ export default function App() {
           }
         });
       },
-      { threshold: 0.05, rootMargin: '0px 0px -24px 0px' }
+      { threshold: 0.02, rootMargin: '0px 0px 40px 0px' }
     );
 
     revealElements.forEach((el) => revealObserver.observe(el));
+    revealAboveOrInView();
 
-    return () => revealObserver.disconnect();
+    const onHashChange = () => {
+      window.setTimeout(revealAboveOrInView, 120);
+      window.setTimeout(revealAboveOrInView, 500);
+    };
+
+    window.addEventListener('hashchange', onHashChange);
+
+    return () => {
+      revealObserver.disconnect();
+      window.removeEventListener('hashchange', onHashChange);
+    };
   }, []);
 
   return (

@@ -8,7 +8,7 @@ export function WhyChooseSection() {
   return (
     <section
       id="por-que-4ever"
-      className="pt-10 pb-20 md:pt-12 md:pb-24 bg-gradient-to-b from-warm-white via-ivory/80 to-warm-white relative overflow-hidden scroll-mt-20"
+      className="pt-10 pb-20 md:pt-12 md:pb-24 bg-gradient-to-b from-warm-white via-ivory/80 to-warm-white relative overflow-hidden scroll-mt-24"
     >
       {/* Ornamento sutil de fundo */}
       <div

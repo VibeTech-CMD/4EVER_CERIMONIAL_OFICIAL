@@ -5,7 +5,7 @@ export function AboutAndFounders() {
   return (
     <section
       id="sobre"
-      className="pt-10 pb-20 md:pt-12 md:pb-24 bg-gradient-to-b from-warm-white via-ivory to-warm-white scroll-mt-20"
+      className="pt-10 pb-20 md:pt-12 md:pb-24 bg-gradient-to-b from-warm-white via-ivory to-warm-white scroll-mt-24"
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         {/* Bloco História & Propósito */}
@@ -17,6 +17,8 @@ export function AboutAndFounders() {
                 <img
                   src={SITE_ASSETS.aboutArchImage}
                   alt="Os quatro sócios fundadores da 4EVER Cerimonial na ponte"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover object-[50%_22%] contrast-[1.03] saturate-[0.94]"
                 />
               </div>
@@ -93,6 +95,8 @@ export function AboutAndFounders() {
                   <img
                     src={founder.image}
                     alt={founder.alt}
+                    loading="lazy"
+                    decoding="async"
                     className={`w-full h-full object-cover ${
                       founder.objectPositionClass ?? 'object-top'
                     } group-hover:scale-105 transition-transform duration-500`}

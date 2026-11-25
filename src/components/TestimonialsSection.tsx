@@ -116,7 +116,7 @@ export function TestimonialsSection() {
   return (
     <section
       id="depoimentos"
-      className="pt-10 pb-20 md:pt-12 md:pb-24 bg-gradient-to-b from-warm-white via-ivory/80 to-warm-white overflow-hidden scroll-mt-20"
+      className="pt-10 pb-20 md:pt-12 md:pb-24 bg-gradient-to-b from-warm-white via-ivory/80 to-warm-white overflow-hidden scroll-mt-24"
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-8 reveal">
         <div className="text-center max-w-2xl mx-auto mb-12">

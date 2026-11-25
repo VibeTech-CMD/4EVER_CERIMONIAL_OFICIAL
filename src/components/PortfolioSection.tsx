@@ -31,7 +31,7 @@ export function PortfolioSection({ onOpenLightbox }: PortfolioSectionProps) {
   return (
     <section
       id="portfolio"
-      className="pt-10 pb-20 md:pt-12 md:pb-24 bg-gradient-to-b from-warm-white via-ivory to-warm-white scroll-mt-20"
+      className="pt-10 pb-20 md:pt-12 md:pb-24 bg-gradient-to-b from-warm-white via-ivory to-warm-white scroll-mt-24"
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 reveal">
@@ -90,6 +90,8 @@ export function PortfolioSection({ onOpenLightbox }: PortfolioSectionProps) {
                 <img
                   src={item.thumb}
                   alt={item.alt}
+                  loading="lazy"
+                  decoding="async"
                   className={`w-full h-full object-cover ${
                     item.objectPositionClass ?? 'object-center'
                   } group-hover:scale-105 transition-transform duration-700`}

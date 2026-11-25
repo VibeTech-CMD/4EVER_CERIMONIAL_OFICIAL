@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { PortfolioItem } from '../data/siteData';
 
 interface LightboxModalProps {
@@ -16,9 +16,13 @@ export function LightboxModal({
 }: LightboxModalProps) {
   const isOpen = currentIndex !== null && items[currentIndex] !== undefined;
   const currentItem = isOpen ? items[currentIndex] : null;
+  const touchStartX = useRef<number | null>(null);
 
   useEffect(() => {
     if (!isOpen || currentIndex === null) return;
+
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
 
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -31,7 +35,10 @@ export function LightboxModal({
     };
 
     document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
+    return () => {
+      document.body.style.overflow = prevOverflow;
+      document.removeEventListener('keydown', handleKeyDown);
+    };
   }, [isOpen, currentIndex, items.length, onClose, onNavigate]);
 
   if (!isOpen || !currentItem || currentIndex === null) return null;
@@ -44,6 +51,21 @@ export function LightboxModal({
     onNavigate((currentIndex + 1) % items.length);
   };
 
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    touchStartX.current = e.touches[0]?.clientX ?? null;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (touchStartX.current === null || items.length <= 1) return;
+    const endX = e.changedTouches[0]?.clientX ?? touchStartX.current;
+    const deltaX = touchStartX.current - endX;
+    touchStartX.current = null;
+    if (Math.abs(deltaX) > 45) {
+      if (deltaX > 0) handleNext();
+      else handlePrev();
+    }
+  };
+
   return (
     <div
       id="lightbox-modal"
@@ -53,6 +75,8 @@ export function LightboxModal({
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
       className="fixed inset-0 z-50 flex items-center justify-center bg-espresso/95 backdrop-blur-md p-4"
     >
       {/* Fechar */}
@@ -97,6 +121,7 @@ export function LightboxModal({
           id="lightbox-img"
           src={currentItem.full}
           alt={currentItem.caption}
+          decoding="async"
           className="max-h-[76vh] mx-auto rounded-3xl shadow-2xl border border-champagne/40 object-contain"
         />
         <p className="font-serif italic text-xl text-warm-white mt-4">{currentItem.title}</p>

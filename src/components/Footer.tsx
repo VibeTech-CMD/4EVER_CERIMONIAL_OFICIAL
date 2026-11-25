@@ -10,9 +10,9 @@ export function Footer() {
   return (
     <footer className="bg-espresso text-ivory/85 border-t border-champagne/30">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 pt-16 pb-10">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-warm-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-10 pb-12 border-b border-warm-white/10">
           {/* Logomarca Oficial do Rodapé */}
-          <div className="md:col-span-5 space-y-4">
+          <div className="md:col-span-4 space-y-4">
             <a
               href="#inicio"
               className="inline-flex items-start focus:outline-none focus-visible:ring-2 focus-visible:ring-champagne rounded-lg"
@@ -22,6 +22,8 @@ export function Footer() {
                 id="footer-logo"
                 src={SITE_ASSETS.footerLogo}
                 alt="4EVER Cerimonial - Assessoria e Cerimonial"
+                loading="lazy"
+                decoding="async"
                 className="h-16 sm:h-[74px] w-auto object-contain logo-footer-img"
               />
             </a>
@@ -76,7 +78,7 @@ export function Footer() {
           </div>
 
           {/* Contato & Redes */}
-          <div className="md:col-span-4 space-y-3">
+          <div className="md:col-span-5 space-y-3">
             <p className="text-xs uppercase tracking-[0.22em] text-champagne-light font-semibold">
               Contato &amp; Redes
             </p>
@@ -87,7 +89,7 @@ export function Footer() {
                   href={buildWhatsAppUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-champagne-light transition-colors"
+                  className="hover:text-champagne-light transition-colors whitespace-nowrap"
                 >
                   WhatsApp: {CONTACT_INFO.whatsappDisplay}
                 </a>
@@ -95,7 +97,7 @@ export function Footer() {
               <li>
                 <a
                   href={`mailto:${CONTACT_INFO.email}`}
-                  className="hover:text-champagne-light transition-colors break-all"
+                  className="hover:text-champagne-light transition-colors whitespace-nowrap"
                 >
                   E-mail: {CONTACT_INFO.email}
                 </a>
@@ -105,7 +107,7 @@ export function Footer() {
                   href={CONTACT_INFO.instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-champagne-light transition-colors"
+                  className="hover:text-champagne-light transition-colors whitespace-nowrap"
                 >
                   Instagram: {CONTACT_INFO.instagramHandle}
                 </a>

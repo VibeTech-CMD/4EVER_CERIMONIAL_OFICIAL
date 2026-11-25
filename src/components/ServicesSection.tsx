@@ -4,7 +4,7 @@ export function ServicesSection() {
   return (
     <section
       id="servicos"
-      className="pt-10 pb-20 md:pt-12 md:pb-24 bg-gradient-to-b from-warm-white via-ivory/70 to-warm-white scroll-mt-20"
+      className="pt-10 pb-20 md:pt-12 md:pb-24 bg-gradient-to-b from-warm-white via-ivory/70 to-warm-white scroll-mt-24"
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         {/* Cabeçalho da Seção */}
@@ -140,7 +140,7 @@ export function ServicesSection() {
                   href={ctaHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full text-center py-3.5 px-6 rounded-full border border-botanical text-botanical text-xs uppercase tracking-[0.2em] font-medium hover:bg-botanical hover:text-warm-white transition-colors"
+                  className="w-full text-center py-3.5 px-4 sm:px-6 rounded-full border border-botanical text-botanical text-[11px] sm:text-xs uppercase tracking-[0.14em] sm:tracking-[0.2em] font-medium hover:bg-botanical hover:text-warm-white transition-colors whitespace-nowrap"
                 >
                   {pkg.ctaLabel}
                 </a>
@@ -160,6 +160,8 @@ export function ServicesSection() {
                 <img
                   src={segment.image}
                   alt={segment.alt}
+                  loading="lazy"
+                  decoding="async"
                   className={`w-full h-full object-cover ${
                     segment.objectPositionClass ?? 'object-center'
                   } group-hover:scale-105 transition-transform duration-700`}
