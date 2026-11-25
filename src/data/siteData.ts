@@ -424,38 +424,45 @@ export interface TestimonialItem {
 
 export const TESTIMONIALS: TestimonialItem[] = [
   {
-    id: 'dep-1',
-    couple: 'Mariana & Lucas',
-    eventLabel: 'Casamento em Macaé',
+    id: 'caroline-igor-1',
+    couple: 'Caroline & Igor',
+    eventLabel: 'Casamento',
     quote:
-      'Vocês transformaram nossa ansiedade em calma. Entramos no altar sentindo apenas amor, porque sabíamos que cada detalhe estava em mãos seguras.',
+      'Não poderia deixar de falar o quanto somos gratos por todo carinho, cuidado e dedicação que tiveram com a gente no nosso grande dia. Sei que, por trás de cada momento, existe muito trabalho para que tudo saia perfeito, e vocês fizeram tudo com tanto carinho que nos sentimos acolhidos e tranquilos.',
   },
   {
-    id: 'dep-2',
-    couple: 'Camila & Rafael',
-    eventLabel: 'Pacote Forever',
+    id: 'andressa-guilbert-1',
+    couple: 'Andressa & Guilbert',
+    eventLabel: 'Casamento',
     quote:
-      'Ter os quatro sócios presentes do início ao fim fez toda a diferença. Nossos convidados elogiaram o cuidado e o acolhimento a noite inteira.',
+      'Foi uma experiência muito especial! Desde os preparativos até o grande dia, vocês foram essenciais nesse momento, pensaram e cuidaram de cada detalhe. Ter vocês ao nosso lado nos trouxe muita tranquilidade e segurança.',
   },
   {
-    id: 'dep-3',
-    couple: 'Beatriz & Thiago',
-    eventLabel: 'Cerimônia ao Ar Livre',
+    id: 'joyce-marcos-1',
+    couple: 'Joyce & Marcos',
+    eventLabel: 'Casamento',
     quote:
-      'Cada música entrou no segundo exato, cada abraço aconteceu sem pressa. A 4EVER cuidou da nossa história com uma sensibilidade que nunca vamos esquecer.',
+      'Foi incrível viver cada momento com vocês! No início, achei que não teria condições de realizar uma cerimônia tão linda como sempre sonhei, mas vocês chegaram e fizeram toda a diferença — desde os momentos antes do casamento até a surpresa do buquê entregue no hotel, um gesto que guardarei com muito carinho.',
   },
   {
-    id: 'dep-4',
-    couple: 'Juliana & Henrique',
-    eventLabel: 'Pacote Love',
+    id: 'caroline-igor-2',
+    couple: 'Caroline & Igor',
+    eventLabel: 'Casamento',
     quote:
-      'Na reta final eu achava que não ia dar conta de tudo, até vocês assumirem o cronograma. Foi a melhor escolha do nosso casamento, vivemos cada instante!',
+      'Nosso casamento foi um dia único e muito especial, e vocês fizeram parte dessa história. Obrigada por cada detalhe e atenção — principalmente comigo, que estava super nervosa e vocês me acalmaram de forma simples e carinhosa. Levaremos esse dia para sempre na memória e no coração!',
   },
   {
-    id: 'dep-5',
-    couple: 'Fernanda & Pedro',
-    eventLabel: 'Casamento Intimista',
+    id: 'andressa-guilbert-2',
+    couple: 'Andressa & Guilbert',
+    eventLabel: 'Casamento',
     quote:
-      'Organização impecável sem perder o carinho. Até nos pequenos imprevistos vocês resolveram tudo em silêncio — nós só soubemos depois, já sorrindo.',
+      'Foi muito bom poder contar com uma equipe tão comprometida. Somos muito gratos por todo o carinho, atenção e profissionalismo de vocês! Com certeza, fizeram parte de um dos dias mais especiais das nossas vidas!',
+  },
+  {
+    id: 'joyce-marcos-2',
+    couple: 'Joyce & Marcos',
+    eventLabel: 'Casamento',
+    quote:
+      'Vocês estiveram ao nosso lado em cada etapa, nos ajudando, acalmando e orientando até o final da festa. Sou muito grata por todo o carinho, dedicação e profissionalismo de cada um. Vocês fizeram parte de um dos dias mais especiais das nossas vidas e tornaram esse sonho ainda mais lindo!',
   },
 ];

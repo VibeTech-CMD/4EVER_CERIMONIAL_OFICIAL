@@ -42,9 +42,8 @@ export function AboutAndFounders() {
               transparência, escuta ativa e organização impecável.
             </p>
             <p className="text-graphite/85 leading-relaxed font-light text-base">
-              Acreditamos que esse evento merece ser vivido com tranquilidade, permitindo aos noivos
-              e familiares desfrutarem ao máximo da cerimônia. Por isso, estruturamos um atendimento
-              personalizado a cada cliente.
+              Acreditamos que esse evento merece ser vivido com tranquilidade, permitindo que os
+              noivos e seus familiares aproveitem ao máximo cada instante da celebração.
             </p>
 
             {/* Diferenciais */}
