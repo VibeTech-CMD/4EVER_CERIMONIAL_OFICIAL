@@ -27,7 +27,7 @@ export const CONTACT_INFO = {
   instagramHandle: '@4ever_cerimonial',
   instagramUrl: 'https://instagram.com/4ever_cerimonial',
   developerName: 'VibeTech|CMD',
-  developerUrl: 'https://vibetech-cmd.github.io/VIBETECH/',
+  developerUrl: 'https://vibetechcmd.com.br/',
 };
 
 export const NAV_LINKS = [
